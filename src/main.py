@@ -6,7 +6,7 @@ from train import train_and_evaluate_model
 
 # Define the path to your data
 # Using a relative path from the root of the project is a good practice
-DATA_PATH = r"C:\Users\judym\OneDrive\Desktop\python\Titanic_project\data\Titanic-Dataset.csv"
+DATA_PATH = 'data/Titanic-Dataset.csv'
 
 
 def run_pipeline():
