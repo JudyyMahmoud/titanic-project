@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+import joblib
 
 
 def train_and_evaluate_model(df) -> Dict[str, Any]:
@@ -27,11 +28,16 @@ def train_and_evaluate_model(df) -> Dict[str, Any]:
     lr_preds = lr.predict(X_test)
     lr_acc = accuracy_score(y_test, lr_preds)
 
+    joblib.dump(lr, 'model.pkl')
+    print("Model saved as 'model.pkl'")
+
     # Random Forest
     rf = RandomForestClassifier(n_estimators=100, random_state=42)
     rf.fit(X_train, y_train)
     rf_preds = rf.predict(X_test)
     rf_acc = accuracy_score(y_test, rf_preds)
+    joblib.dump(rf, 'model1.pkl')
+    print("Model saved as 'model1.pkl'")
 
     results = {
         'logistic': {

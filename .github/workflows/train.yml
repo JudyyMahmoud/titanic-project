@@ -30,3 +30,9 @@ jobs:
     # Step 4: Run your main pipeline script
     - name: Run Training Pipeline
       run: python src/main.py
+
+    - name: Upload Model Artifact
+      uses: actions/upload-artifact@v4  # Uses a pre-made action
+      with:
+        name: trained-model       # The name of the download button
+        path: model1.pkl           # The file we want to save
