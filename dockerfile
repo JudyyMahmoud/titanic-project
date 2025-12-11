@@ -18,4 +18,4 @@ COPY model1.pkl .
 EXPOSE 8000
 
 # 7. Command to run the app
-CMD ["uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "8000"]
