@@ -44,4 +44,4 @@ jobs:
         push: true
         # Replace 'your-username' below with your actual Docker Hub username!
         # Keep the /titanic-api part.
-        tags: ${{ secrets.DOCKER_USERNAME }}/titanic-api:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/titanic-api:v2
